@@ -6,6 +6,14 @@ import 'package:projek_flutterpertama/container/row_column/LatihanColumnRow1.dar
 import 'package:projek_flutterpertama/container/row_column/LatihanColumnRow2.dart';
 import 'package:projek_flutterpertama/container/row_column/RowColumn.dart';
 import 'package:projek_flutterpertama/container/row_column/RowWidget.dart';
+import 'package:projek_flutterpertama/container/sized_box/ExpandedWidget.dart';
+import 'package:projek_flutterpertama/container/sized_box/Latihan3.dart';
+import 'package:projek_flutterpertama/container/sized_box/Latihan4.dart';
+import 'package:projek_flutterpertama/container/sized_box/Layout4.dart';
+import 'package:projek_flutterpertama/container/sized_box/LayoutSatu.dart';
+import 'package:projek_flutterpertama/container/sized_box/SizeBox.dart';
+import 'package:projek_flutterpertama/container/sized_box/StackWidget.dart';
+import 'package:projek_flutterpertama/container/sized_box/LayoutDua.dart';
 
 void main() {
   runApp( MyApp());
@@ -19,12 +27,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Latihan Container'),
-          backgroundColor: const Color.fromARGB(255, 38, 255, 0),
-          centerTitle: true,
-        ),
-        body: LatihanColumnRow2()
+        // appBar: AppBar(
+        //  // title: Text('Latihan Container'),
+        //  // backgroundColor: const Color.fromARGB(255, 38, 255, 0),
+        //  // centerTitle: true,
+        // ),
+        body: Latihan4()
       ),
     );
   } 
