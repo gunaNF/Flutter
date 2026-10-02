@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projek_flutterpertama/container/ContainerSatu.dart';
 import 'package:projek_flutterpertama/container/LatihanContainer.dart';
+import 'package:projek_flutterpertama/container/grid/GridInstagram.dart';
 import 'package:projek_flutterpertama/container/row_column/ColumnWidget.dart';
 import 'package:projek_flutterpertama/container/row_column/LatihanColumnRow1.dart';
 import 'package:projek_flutterpertama/container/row_column/LatihanColumnRow2.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         //  // backgroundColor: const Color.fromARGB(255, 38, 255, 0),
         //  // centerTitle: true,
         // ),
-        body: Latihan4()
+        body: Gridinstagram()
       ),
     );
   } 
