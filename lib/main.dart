@@ -1,4 +1,10 @@
+
 import 'package:flutter/material.dart';
+import 'package:projek_flutterpertama/routes/app_route.dart';
+
+/*
+// KODE MAIN LAMA
+
 import 'package:projek_flutterpertama/container/ContainerSatu.dart';
 import 'package:projek_flutterpertama/container/LatihanContainer.dart';
 import 'package:projek_flutterpertama/container/grid/GridInstagram.dart';
@@ -17,29 +23,22 @@ import 'package:projek_flutterpertama/container/sized_box/LayoutSatu.dart';
 import 'package:projek_flutterpertama/container/sized_box/SizeBox.dart';
 import 'package:projek_flutterpertama/container/sized_box/StackWidget.dart';
 import 'package:projek_flutterpertama/container/sized_box/LayoutDua.dart';
-
+import 'package:projek_flutterpertama/navigator.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  //const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // appBar: AppBar(
-        //  // title: Text('Latihan Container'),
-        //  // backgroundColor: const Color.fromARGB(255, 38, 255, 0),
-        //  // centerTitle: true,
-        // ),
-        body: ArticleListScreen()
+        body: NavigatorWidget(),
       ),
     );
-  } 
+  }
 }
 
 class Hellowidget extends StatelessWidget {
@@ -49,6 +48,24 @@ class Hellowidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text('Hello, World!'),
+    );
+  }
+}
+*/
+
+// KODE BARU YANG AKTIF\
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: AppRoute.routes,
     );
   }
 }

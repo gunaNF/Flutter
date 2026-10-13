@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class InstagramPage extends StatelessWidget {
@@ -13,7 +14,6 @@ class InstagramPage extends StatelessWidget {
       {'name': 'bandung_code', 'image': 'https://picsum.photos/100?5'},
       {'name': 'ui_ux_indo', 'image': 'https://picsum.photos/100?6'},
     ];
-
 
     final List<Map<String, String>> posts = [
       {
@@ -40,16 +40,25 @@ class InstagramPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Instagram',
-          style: TextStyle(fontFamily: 'Billabong', fontSize: 28, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
-          IconButton(icon: const Icon(Icons.favorite_border), onPressed: () {}),
-          IconButton(icon: const Icon(Icons.chat_bubble_outline), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.favorite_border),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.chat_bubble_outline),
+            onPressed: () {},
+          ),
         ],
       ),
-      
       body: ListView(
         children: [
+          // Story Instagram
           SizedBox(
             height: 100,
             child: ListView.builder(
@@ -57,17 +66,21 @@ class InstagramPage extends StatelessWidget {
               itemCount: stories.length,
               itemBuilder: (context, index) {
                 final story = stories[index];
+
                 return Container(
                   margin: const EdgeInsets.symmetric(horizontal: 8),
                   child: Column(
                     children: [
-                      // Lingkaran Foto Profil Story
                       Container(
                         padding: const EdgeInsets.all(3),
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
-                            colors: [Colors.purple, Colors.orange, Colors.yellow],
+                            colors: [
+                              Colors.purple,
+                              Colors.orange,
+                              Colors.yellow,
+                            ],
                           ),
                         ),
                         child: CircleAvatar(
@@ -88,47 +101,72 @@ class InstagramPage extends StatelessWidget {
           ),
 
           const Divider(height: 1),
+
+          // Daftar postingan
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: posts.length,
             itemBuilder: (context, index) {
               final post = posts[index];
+
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Header Postingan (Avatar & Username)
+                  // Header postingan
                   ListTile(
                     leading: CircleAvatar(
                       backgroundImage: NetworkImage(post['avatar']!),
                     ),
                     title: Text(
                       post['username']!,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     trailing: const Icon(Icons.more_vert),
                   ),
 
-                  // Gambar Postingan
+                  // Gambar postingan
                   Image.network(
                     post['postImage']!,
                     height: 300,
                     width: double.infinity,
                     fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const SizedBox(
+                        height: 300,
+                        child: Center(
+                          child: Icon(Icons.broken_image, size: 50),
+                        ),
+                      );
+                    },
                   ),
 
-                  // Tombol Aksi (Like, Comment, Share)
+                  // Tombol like, komentar, dan share
                   Row(
                     children: [
-                      IconButton(icon: const Icon(Icons.favorite_border), onPressed: () {}),
-                      IconButton(icon: const Icon(Icons.chat_bubble_outline), onPressed: () {}),
-                      IconButton(icon: const Icon(Icons.send), onPressed: () {}),
+                      IconButton(
+                        icon: const Icon(Icons.favorite_border),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.chat_bubble_outline),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.send),
+                        onPressed: () {},
+                      ),
                       const Spacer(),
-                      IconButton(icon: const Icon(Icons.bookmark_border), onPressed: () {}),
+                      IconButton(
+                        icon: const Icon(Icons.bookmark_border),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
 
-                  // Caption Postingan
+                  // Caption postingan
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: RichText(
@@ -137,13 +175,16 @@ class InstagramPage extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: '${post['username']} ',
-                            style: const TextStyle(fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           TextSpan(text: post['caption']),
                         ],
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 16),
                 ],
               );
