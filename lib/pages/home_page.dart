@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:projek_flutterpertama/routes/app_route.dart';
+import 'package:projek_flutterpertama/pages/form_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -34,6 +35,13 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, AppRoute.instagram);
               },
               child: const Text('Masuk ke IG'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoute.form);
+              },
+              child: const Text('Masuk ke Form'),
             ),
           ],
         ),
