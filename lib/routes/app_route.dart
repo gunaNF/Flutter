@@ -1,10 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:projek_flutterpertama/container/grid/InstagramPage.dart';
 import 'package:projek_flutterpertama/container/list_grid_view/article_list_screen.dart';
 import 'package:projek_flutterpertama/pages/about_page.dart';
 import 'package:projek_flutterpertama/pages/form_page.dart';
 import 'package:projek_flutterpertama/pages/home_page.dart';
+import 'package:projek_flutterpertama/pages/input_page.dart';
+import 'package:projek_flutterpertama/pages/output_page.dart'; 
 
 class AppRoute {
   static const home = '/';
@@ -18,6 +19,6 @@ class AppRoute {
     articleList: (context) => const ArticleListScreen(),
     about: (context) => const AboutPage(),
     instagram: (context) => const InstagramPage(),
-    form: (context) => const FormPage(),
-  };
+    form: (context) => const BelajarForm(),
+  }; 
 }
