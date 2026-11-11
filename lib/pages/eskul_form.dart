@@ -30,7 +30,6 @@ class _EskulFormState extends State<EskulForm> {
     "XII RPL 1",
   ];
 
-  // List Eskul beserta status checkbox-nya
   final Map<String, bool> listEskul = {
     "Futsal": false,
     "Pramuka": false,
@@ -87,7 +86,6 @@ class _EskulFormState extends State<EskulForm> {
 
                       const SizedBox(height: 18),
 
-                      // 1. Nama Lengkap
                       TextFormField(
                         controller: namaController,
                         decoration: const InputDecoration(
@@ -104,7 +102,6 @@ class _EskulFormState extends State<EskulForm> {
 
                       const SizedBox(height: 18),
 
-                      // 2. No Telepon (Keyboard khusus HP/Nomor)
                       TextFormField(
                         controller: teleponController,
                         keyboardType: TextInputType.phone,
@@ -122,7 +119,6 @@ class _EskulFormState extends State<EskulForm> {
 
                       const SizedBox(height: 18),
 
-                      // 3. Email (Keyboard khusus email)
                       TextFormField(
                         controller: emailController,
                         keyboardType: TextInputType.emailAddress,
@@ -143,7 +139,6 @@ class _EskulFormState extends State<EskulForm> {
 
                       const SizedBox(height: 18),
 
-                      // 4. Kelas (Dropdown 5 pilihan)
                       DropdownButtonFormField<String>(
                         decoration: const InputDecoration(
                           labelText: "Pilih Kelas",
@@ -174,7 +169,6 @@ class _EskulFormState extends State<EskulForm> {
 
                       const SizedBox(height: 18),
 
-                      // 5. Eskul (Checkbox - Min 1, Max 2)
                       const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -229,7 +223,6 @@ class _EskulFormState extends State<EskulForm> {
 
                       const SizedBox(height: 18),
 
-                      // 6. Tanggal Pendaftaran (DatePicker)
                       TextFormField(
                         controller: tglPendaftaranController,
                         decoration: const InputDecoration(
@@ -308,13 +301,12 @@ class _EskulFormState extends State<EskulForm> {
 
     if (!isValid || selectedEskulCount == 0) return;
 
-    // Ambil daftar eskul yang dicentang untuk dikirim ke halaman output
     List<String> selectedEskulList = listEskul.entries
         .where((entry) => entry.value)
         .map((entry) => entry.key)
         .toList();
 
-    // Navigasi ke halaman output (Pastikan file eskul_output.dart menyesuaikan parameter ini)
+
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -323,7 +315,7 @@ class _EskulFormState extends State<EskulForm> {
           telepon: teleponController.text,
           email: emailController.text,
           kelas: _selectedKelas ?? '',
-          eskul: selectedEskulList.join(', '), // Menggabungkan eskul yang dipilih (misal: "Futsal, Pramuka")
+          eskul: selectedEskulList.join(', '),
           tglPendaftaran: tglPendaftaranController.text,
         ),
       ),
