@@ -196,6 +196,19 @@ class HomePage extends StatelessWidget {
                       onPressed: () => Navigator.pushNamed(context, AppRoute.foodList),
                     ),
                     const SizedBox(height: 16),
+
+                     _buildModernCard(
+                      context,
+                      title: 'Post Api',
+                      subtitle: 'post api',
+                      icon: Icons.fastfood_rounded,
+                      accentColor: const Color.fromARGB(255, 0, 204, 255),
+                      gradientColors: [const Color.fromARGB(255, 255, 11, 214), const Color(0xFFFFA500)],
+                      onPressed: () => Navigator.pushNamed(context, AppRoute.postpage),
+                    ),
+                    const SizedBox(height: 16),
+
+
                   ]),
                 ),
               ),

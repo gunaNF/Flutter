@@ -9,6 +9,7 @@ import 'package:projek_flutterpertama/pages/output_page.dart';
 import 'package:projek_flutterpertama/pages/eskul_form.dart';
 import 'package:projek_flutterpertama/container/grid/GridInstagram.dart';
 import 'package:projek_flutterpertama/pages/food_list_page.dart';
+import 'package:projek_flutterpertama/pages/post_page.dart';
 
 class AppRoute {
   static const home = '/';
@@ -19,6 +20,7 @@ class AppRoute {
   static const eskul = '/eskul';
   static const gridInstagram = '/grid-instagram';
   static const foodList = '/food-list';
+  static const postpage = '/post-page';
 
   static final Map<String, WidgetBuilder> routes = {
     home: (context) => const HomePage(),
@@ -29,5 +31,6 @@ class AppRoute {
     eskul: (context) => const EskulForm(),
     gridInstagram: (context) => const Gridinstagram(),
     foodList: (context) => const FoodListScreen(),
+    postpage: (context) => const PostPage (),
   }; 
 }

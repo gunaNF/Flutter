@@ -2,6 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:projek_flutterpertama/routes/app_route.dart';
 import 'package:projek_flutterpertama/pages/form_page.dart';
+import 'pages/home_auth.dart';
+import 'pages/login_page.dart';
+import 'services/auth_service.dart';
+
 
 /*
 // KODE MAIN LAMA
@@ -56,17 +60,21 @@ class Hellowidget extends StatelessWidget {
 
 // KODE BARU YANG AKTIF\
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final token = await AuthService().getToken();
+  runApp(MyApp(isLoggedIn: token != null));
 }
 
 class MyApp extends StatelessWidget {
+  final bool isLoggedIn;
+  const MyApp({super.key, required this.isLoggedIn});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: AppRoute.routes,
+      home: isLoggedIn ? const HomePage() : const LoginPage(),
     );
   }
 }
