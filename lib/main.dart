@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:projek_flutterpertama/pages/article_list_page.dart';
 import 'package:projek_flutterpertama/routes/app_route.dart';
 import 'package:projek_flutterpertama/pages/form_page.dart';
-import 'pages/home_auth.dart';
+// import 'pages/home_auth.dart';
 import 'pages/login_page.dart';
 import 'services/auth_service.dart';
 
@@ -74,7 +75,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: isLoggedIn ? const HomePage() : const LoginPage(),
+      home: isLoggedIn ? const ArticleListPage() : const LoginPage(),
     );
   }
 }
